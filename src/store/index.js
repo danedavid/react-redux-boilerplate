@@ -3,9 +3,10 @@ import {
   compose,
   applyMiddleware
 } from 'redux';
+import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
-const middleware = [];
+const middleware = [thunk];
 
 // For Redux DevTools support
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
