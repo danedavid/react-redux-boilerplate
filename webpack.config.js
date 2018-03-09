@@ -7,12 +7,14 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js'
   },
+  // 'mode' option - new in Webpack 4
   mode: 'development',
   devServer: {
     contentBase: './dist'
   },
   module: {
     rules: [
+      // Babel loader for compiling JSX
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -20,14 +22,28 @@ const config = {
           loader: 'babel-loader'
         }
       },
+      // Loader for HTML files
       {
         test: /\.html$/,
         use: {
           loader: 'html-loader'
         }
+      },
+      // 'url-loader' to load files less than limit as base64 encoded DATA URLs
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
     ]
   },
+  // For injecting source bundle into HTML file
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
