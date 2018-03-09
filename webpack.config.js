@@ -40,6 +40,39 @@ const config = {
             }
           }
         ]
+      },
+      // SCSS loader
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      // CSS loader
+      {
+        test: /\.css$/,
+          use: [
+            {
+              loader: 'style-loader'
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1
+              }
+            }
+          ]
       }
     ]
   },
