@@ -41,6 +41,18 @@ const config = {
           }
         ]
       },
+      // to load fonts
+      {
+        test: /\.(otf|ttf)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
       // SCSS loader
       {
         test: /\.scss$/,

@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactLogo from '../assets/react-logo.png';
-import ReduxLogo from '../assets/redux-logo.png';
+import ReactLogo from '../assets/images/react-logo.png';
+import ReduxLogo from '../assets/images/redux-logo.png';
 import './App.scss';
 
 const App = () => (
