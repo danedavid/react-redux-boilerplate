@@ -1,8 +1,40 @@
-.sample {
-  background-color: red;
+$img-size: 100px;
 
-  img {
-    width: 50px;
-    height: 50px;
+.app-container {
+  background-color: #7ac3df;
+  min-height: 100vh;
+
+  .banner {
+    background-color: #222;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 45%;
+      top: 0;
+      bottom: 0;
+      background-color: #eee;
+      clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    img {
+      width: $img-size;
+      height: $img-size;
+      z-index: 3;
+    }
+  }
+
+  .content {
+    color: #fff;
+    font: bold 36px sans-serif;
+    padding-top: 44px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #111;
   }
 }
